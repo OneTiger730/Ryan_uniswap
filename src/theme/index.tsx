@@ -41,22 +41,26 @@ export function colors(darkMode: boolean): Colors {
     black,
 
     // text
-    text1: darkMode ? '#FFFFFF' : '#000000',
-    text2: darkMode ? '#C3C5CB' : '#565A69',
-    text3: darkMode ? '#6C7284' : '#888D9B',
-    text4: darkMode ? '#565A69' : '#C3C5CB',
-    text5: darkMode ? '#2C2F36' : '#EDEEF2',
+    text1: darkMode ? '#FFFFFF' : '#FFFFFF',
+    text2: darkMode ? '#C3C5CB' : '#C3C5CB',
+    text3: darkMode ? '#6C7284' : '#6C7284',
+    text4: darkMode ? '#565A69' : '#565A69',
+    text5: darkMode ? '#2C2F36' : '#2C2F36',
+    text6: darkMode ? '#fede5e' : '#fede5e',
+    text7: darkMode ? '#000' : '#000',
 
     // backgrounds / greys
-    bg1: darkMode ? '#1d1f24' : '#fafafa',
-    bg2: darkMode ? '#27292e' : '#ededed',
-    bg3: darkMode ? '#3a3d47' : '#e6e6e8',
-    bg4: darkMode ? '#4c4f5c' : '#CED0D9',
-    bg5: darkMode ? '#6C7284' : '#888D9B',
-
+    bg1: darkMode ? '#1d1f24' : '#1d1f24',
+    bg2: darkMode ? '#27292e' : '#27292e',
+    bg3: darkMode ? '#3a3d47' : '#3a3d47',  
+    bg4: darkMode ? '#4c4f5c' : '#4c4f5c',
+    bg5: darkMode ? '#6C7284' : '#6C7284',
+    bg6: darkMode ? '#0d032d' : '#0d032d',
+    bg7: darkMode ? '#1489f3' : '#1489f3',
+    bg8: darkMode ? '#060606' : '#060606',
     //specialty colors
-    modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',
-    advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
+    modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,.425)',
+    advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0.1)',
 
     //primary colors
     primary1: '#2792d6',
@@ -64,14 +68,15 @@ export function colors(darkMode: boolean): Colors {
     primary3: '#389fe0',
     primary4: '#54afe8',
     primary5: '#5fb3e8',
+    primary6: '#0d032d',
 
     // color text
-    primaryText1: darkMode ? '#fff' : '#000',
+    primaryText1: darkMode ? '#fff' : '#fff',
 
     // secondary colors
     secondary1: '#3B6A9C',
-    secondary2: darkMode ? '#17000b26' : '#F6DDE8',
-    secondary3: darkMode ? '#17000b26' : '#FDEAF1',
+    secondary2: darkMode ? '#17000b26' : '#17000b26',
+    secondary3: darkMode ? '#17000b26' : '#17000b26',
 
     // other
     red1: '#FD4040',
@@ -95,7 +100,7 @@ export function theme(darkMode: boolean): DefaultTheme {
     },
 
     //shadows
-    shadow1: darkMode ? '#000' : '#2F80ED',
+    shadow1: darkMode ? '#000' : '#000',
 
     // media queries
     mediaWidth: mediaWidthTemplates,
@@ -126,7 +131,7 @@ const TextWrapper = styled(Text)<{ color: keyof Colors }>`
 
 export const TYPE = {
   main(props: TextProps) {
-    return <TextWrapper fontWeight={500} color={'text2'} {...props} />;
+    return <TextWrapper fontWeight={500} color={'black'} {...props} />;
   },
   link(props: TextProps) {
     return <TextWrapper fontWeight={500} color={'primary1'} {...props} />;

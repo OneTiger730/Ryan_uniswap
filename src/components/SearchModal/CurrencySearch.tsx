@@ -26,6 +26,7 @@ const ContentWrapper = styled(Column)`
   width: 100%;
   flex: 1 1;
   position: relative;
+  background-color: ${({ theme }) => theme.bg6};
 `;
 
 const Footer = styled.div`

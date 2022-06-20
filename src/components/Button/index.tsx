@@ -19,7 +19,7 @@ const Base = styled(RebassButton)<{
   border-radius: 20px;
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   outline: none;
-  border: 1px solid transparent;
+  // border: 1px solid transparent;
   color: white;
   text-decoration: none;
   display: flex;
@@ -41,24 +41,31 @@ const Base = styled(RebassButton)<{
 `;
 
 export const ButtonPrimary = styled(Base)`
-  background-color: ${({ theme }) => theme.primary1};
+  background-color: ${({ theme }) => theme.primary6};
+  // background: pink;
   color: white;
+  box-shadow: 0 0 0.1rem #fff, inset 0 0 0.2rem #fff, 0 0 0.2rem #f0f, inset 0 0 2.5rem #f0f, 0 0 0rem #f0f, inset 0 0 3rem #f0f;
   &:focus {
-    box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.05, theme.primary1)};
-    background-color: ${({ theme }) => darken(0.05, theme.primary1)};
+    // box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.05, theme.primary1)};
+    box-shadow: 0 0 0.1rem #fff, inset 0 0 0.2rem #fff, 0 0 0.2rem #f0f, inset 0 0 2.5rem #f0f, 0 0 0rem #f0f, inset 0 0 3rem #f0f;
+    background-color: ${({ theme }) => darken(0.05, theme.primary6)};
   }
   &:hover {
-    background-color: ${({ theme }) => darken(0.05, theme.primary1)};
+    // background-color: ${({ theme }) => darken(0.05, theme.primary6)};
+    background-color: white;
+    // box-shadow: 0 0 0.1rem #fff, inset 0 0 0.2rem #fff, 0 0 0.2rem #f0f, inset 0 0 2.5rem #f0f, 0 0 0rem #f0f, inset 0 0 3rem #f0f;
+    color: black;
   }
   &:active {
-    box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.primary1)};
-    background-color: ${({ theme }) => darken(0.1, theme.primary1)};
+    box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.primary5)};
+    background-color: ${({ theme }) => darken(0.1, theme.primary4)};
   }
   &:disabled {
     background-color: ${({ theme, altDisabledStyle, disabled }) =>
-      altDisabledStyle ? (disabled ? theme.bg3 : theme.primary1) : theme.bg3};
+      // altDisabledStyle ? (disabled ? theme.bg3 : theme.primary6) : theme.bg3};
+      altDisabledStyle ? (disabled ? '#69c9dc' : theme.primary6) : '#69c9dc'};
     color: ${({ theme, altDisabledStyle, disabled }) =>
-      altDisabledStyle ? (disabled ? theme.text3 : 'white') : theme.text3};
+      altDisabledStyle ? (disabled ? 'black' : 'white') : 'black'};
     cursor: auto;
     box-shadow: none;
     border: 1px solid transparent;

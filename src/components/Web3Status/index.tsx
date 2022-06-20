@@ -65,27 +65,35 @@ const Web3StatusError = styled(Web3StatusGeneric)`
 
 const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
   background-color: ${({ theme }) => theme.primary4};
+  // background-color: rgb(177 14 223);
   border: none;
   color: ${({ theme }) => theme.primaryText1};
   font-weight: 500;
+  box-shadow: 0 0 0.1em #fff, 0 0 0.2em #fff, 0 0 0.3em #fff, 0 0 0.4em #f7f, 0 0 0.6em #f0f, 0 0 0.8em #f0f, 0 0 1em #f0f, 0 0 1.2em #f0f;
 
-  :hover,
+  :hover {
+    // border: 1px solid ${({ theme }) => darken(0.05, theme.primary4)};
+    // color: ${({ theme }) => theme.primaryText1};
+    color: #0d0928;
+    background-color: white;
+  }
+
   :focus {
-    border: 1px solid ${({ theme }) => darken(0.05, theme.primary4)};
-    color: ${({ theme }) => theme.primaryText1};
+    box-shadow: 0 0 0.1em #fff, 0 0 0.2em #fff, 0 0 0.3em #fff, 0 0 0.4em #f7f, 0 0 0.6em #f0f, 0 0 0.8em #f0f, 0 0 1em #f0f, 0 0 1.2em #f0f;
   }
 
   ${({ faded }) =>
     faded &&
     css`
-      background-color: ${({ theme }) => theme.primary5};
+      // background-color: ${({ theme }) => theme.primary5};
+      background-color: rgb(13 9 40);
       border: 1px solid ${({ theme }) => theme.primary5};
       color: ${({ theme }) => theme.primaryText1};
 
-      :hover,
-      :focus {
-        border: 1px solid ${({ theme }) => darken(0.05, theme.primary4)};
-        color: ${({ theme }) => darken(0.05, theme.primaryText1)};
+      :hover {
+        border: 1px solid ${({ theme }) => darken(0.05, theme.primary1)};
+        // color: ${({ theme }) => darken(0.05, theme.primaryText1)};
+        color: black;
       }
     `}
 `;

@@ -7,26 +7,29 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 import Logo from '../../assets/svg/logo.svg';
-import LogoDark from '../../assets/svg/logo_white.svg';
+// import LogoDark from '../../assets/svg/header_logo.png';
 import { useActiveWeb3React } from '../../hooks';
-import { useDarkModeManager } from '../../state/user/hooks';
+// import { useDarkModeManager } from '../../state/user/hooks';
 import { useETHBalances } from '../../state/wallet/hooks';
 
 import { LightCard } from '../Card';
-import { Moon, Sun } from 'react-feather';
+// import { Moon, Sun } from 'react-feather';
 import Row, { RowFixed } from '../Row';
 import Web3Status from '../Web3Status';
 
 const HeaderFrame = styled.div`
   width: 100vw;
-  margin: 0.8rem auto;
-  padding: 0.8rem 1.6rem;
+  // margin: 0.8rem auto;
+  padding: 0.8rem 2.6rem;
   z-index: 2;
-  display: grid;
+  // display: grid;
   grid-template-columns: 120px 1fr 120px;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  background-color: #0d0928;
+  display: flex;
+
 
   ${({ theme }) => theme.mediaWidth.upToLarge`
     grid-template-columns: 60px 1fr 120px;
@@ -59,33 +62,34 @@ const HeaderElement = styled.div`
   `};
 `;
 
-const HeaderElementWrap = styled.div`
-  display: flex;
-  align-items: center;
-`;
+// const HeaderElementWrap = styled.div`
+//   display: flex;
+//   align-items: center;
+// `;
 
 const HeaderRow = styled(RowFixed)`
   display: flex;
   align-items: center;
 
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    width: 100%;
-  `};
+  // ${({ theme }) => theme.mediaWidth.upToMedium`
+  //   width: 100%;
+  // `};
 `;
 
 const HeaderLinks = styled(Row)`
   width: auto;
+  // display: flex;
   margin: 0 auto;
-  padding: 0.3rem;
+  padding: 0.1rem;
   justify-content: center;
-  border-radius: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 4px 8px, rgba(0, 0, 0, 0.04) 0px 16px 24px,
-    rgba(0, 0, 0, 0.01) 0px 24px 32px;
+  border-radius: 30px;
+  box-shadow: 0 0 0.25rem #fff, inset 0 0 0.25rem #0d032d, 0 0 1rem #f0f, inset 0 0 0rem #f0f, 0 0 1rem #f0f, inset 0 0 0rem #f0f;
   background-color: ${({ theme }) => theme.bg1};
 
   ${({ theme }) => theme.mediaWidth.upToLarge`
     margin: 0;
-    margin-right: auto;
+    // margin-right: auto;
+    box-shadow: 0 0 0.25rem #fff, inset 0 0 0.25rem #0d032d, 0 0 1rem #f0f, inset 0 0 0rem #f0f, 0 0 1rem #f0f, inset 0 0 0rem #f0f;
   `};
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
@@ -173,7 +177,7 @@ const StyledNavLink = styled(NavLink).attrs({
 })`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: left;
-  border-radius: 12px;
+  border-radius: 30px;
   outline: none;
   cursor: pointer;
   text-decoration: none;
@@ -183,6 +187,8 @@ const StyledNavLink = styled(NavLink).attrs({
   padding: 0.3rem 0.6rem;
   font-weight: 500;
   transition: 0.3s;
+  width: 100px;
+  justify-content: center;
 
   &:not(:last-child) {
     margin-right: 0.16rem;
@@ -190,7 +196,9 @@ const StyledNavLink = styled(NavLink).attrs({
 
   &.${activeClassName} {
     color: ${({ theme }) => theme.text1};
-    background-color: ${({ theme }) => theme.bg3};
+    // background-color: ${({ theme }) => theme.bg3};
+    background-color: rgb(2, 200, 255);
+    box-shadow: rgb(255 255 255) 0px 0px 0.25rem, rgb(255 255 255) 0px 0px 0.25rem inset, rgb(0 229 255) 0px 0px 1rem, rgb(0 229 255) 0px 0px 1rem inset, rgb(0 229 255) 0px 0px 2rem, rgb(0 229 255) 0px 0px 2rem inset;
   }
 
   :hover,
@@ -241,7 +249,7 @@ export const StyledMenuButton = styled.button`
 `;
 
 const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
-  [ChainId.RINKEBY]: 'Rinkeby',
+  // [ChainId.RINKEBY]: 'Rinkeby',
   [ChainId.ROPSTEN]: 'Ropsten',
   [ChainId.GÖRLI]: 'Goerli',
   [ChainId.KOVAN]: 'Kovan',
@@ -251,14 +259,14 @@ export default function Header() {
   const { account, chainId } = useActiveWeb3React();
   const { t } = useTranslation();
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? ''];
-  const [darkMode, toggleDarkMode] = useDarkModeManager();
+  // const [darkMode, toggleDarkMode] = useDarkModeManager();
 
   return (
     <HeaderFrame>
       <HeaderRow>
         <Title href=".">
           <Icon>
-            <img width={'22px'} src={darkMode ? LogoDark : Logo} alt="logo" />
+            <img width={'100px'} src={ Logo } alt="logo" />
           </Icon>
         </Title>
       </HeaderRow>
@@ -280,6 +288,18 @@ export default function Header() {
         >
           {t('pool')}
         </StyledNavLink>
+        {/* <StyledNavLink
+          id={`developers-nav-link`}
+          to={'/developers'}
+        >
+          {t('Developers')}
+        </StyledNavLink>
+        <StyledNavLink
+          id={`gas-nav-link`}
+          to={'/gas'}
+        >
+          {t('gas')}
+        </StyledNavLink> */}
       </HeaderLinks>
 
       <HeaderControls>
@@ -298,11 +318,11 @@ export default function Header() {
             <Web3Status />
           </AccountElement>
         </HeaderElement>
-        <HeaderElementWrap>
+        {/* <HeaderElementWrap>
           <StyledMenuButton onClick={toggleDarkMode}>
             {darkMode ? <Moon size={20} /> : <Sun size={20} />}
           </StyledMenuButton>
-        </HeaderElementWrap>
+        </HeaderElementWrap> */}
       </HeaderControls>
     </HeaderFrame>
   );

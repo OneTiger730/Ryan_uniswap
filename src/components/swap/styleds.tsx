@@ -32,6 +32,13 @@ export const SectionBreak = styled.div`
 
 export const BottomGrouping = styled.div`
   margin-top: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 0 1.1rem #fff, inset 0 0 0.2rem #fff, 0 0 0.2rem #f0f, inset 0 0 2.5rem #f0f, 0 0 1rem #f0f, inset 0 0 5rem #f0f;
+`;
+
+export const BottomGroupingDisabled = styled.div`
+  margin-top: 1rem;
+  border-radius: 20px;
 `;
 
 export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`

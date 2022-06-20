@@ -56,7 +56,7 @@ const StyledArrowLeft = styled(ArrowLeft)`
   color: ${({ theme }) => theme.text1};
 `;
 
-export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
+export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' | 'developers' | 'gas'}) {
   const { t } = useTranslation();
   return (
     <Tabs style={{ marginBottom: '20px', display: 'none' }}>
@@ -66,6 +66,12 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
       <StyledNavLink id={`pool-nav-link`} to={'/pool'} isActive={() => active === 'pool'}>
         {t('pool')}
       </StyledNavLink>
+      {/* <StyledNavLink id={`developers-nav-link`} to={'/developers'} isActive={() => active === 'developers'}>
+        {t('developers')}
+      </StyledNavLink>
+      <StyledNavLink id={`gas-nav-link`} to={'/gas'} isActive={() => active === 'gas'}>
+        {t('gas')}
+      </StyledNavLink> */}
     </Tabs>
   );
 }
@@ -83,6 +89,34 @@ export function FindPoolTabs() {
     </Tabs>
   );
 }
+
+// export function FindDevelopersTabs() {
+//   return (
+//     <Tabs>
+//       <RowBetween style={{ padding: '1rem 1rem 0 1rem' }}>
+//         <HistoryLink to="/developers">
+//           <StyledArrowLeft />
+//         </HistoryLink>
+//         <ActiveText>Developers Page</ActiveText>
+//         <Settings />
+//       </RowBetween>
+//     </Tabs>
+//   );
+// }
+
+// export function FindGasTabs() {
+//   return (
+//     <Tabs>
+//       <RowBetween style={{ padding: '1rem 1rem 0 1rem' }}>
+//         <HistoryLink to="/gas">
+//           <StyledArrowLeft />
+//         </HistoryLink>
+//         <ActiveText>Gas Less Page</ActiveText>
+//         <Settings />
+//       </RowBetween>
+//     </Tabs>
+//   );
+// }
 
 export function AddRemoveTabs({ adding, creating }: { adding: boolean; creating: boolean }) {
   // reset states on back

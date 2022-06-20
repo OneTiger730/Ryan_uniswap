@@ -27,7 +27,7 @@ const CurrencySelect = styled.button`
   font-size: 20px;
   font-weight: 500;
   border: none;
-  background-color: ${({ theme }) => theme.bg3};
+  background-color: ${({ theme }) => theme.bg6};
   color: ${({ theme }) => theme.text1};
   border-radius: 12px;
   outline: none;
@@ -39,7 +39,7 @@ const CurrencySelect = styled.button`
 
   :focus,
   :hover {
-    background-color: ${({ theme }) => theme.bg4};
+    background-color: ${({ theme }) => theme.bg7};
   }
 `;
 
@@ -76,13 +76,16 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
   ${({ theme }) => theme.flexColumnNoWrap}
   position: relative;
   border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
-  background-color: ${({ theme }) => theme.bg1};
+  // background-color: ${({ theme }) => theme.bg1};
+  // background-color: #0d032d;
   z-index: 1;
+  box-shadow: 0 0 15px;
 `;
 
 const Container = styled.div<{ hideInput: boolean }>`
   border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
-  border: 1px solid ${({ theme }) => theme.bg3};
+  // border: 1px solid ${({ theme }) => theme.bg3};
+  border-collapse: collapse;
 `;
 
 const StyledTokenName = styled.span<{ active?: boolean }>`
@@ -102,6 +105,7 @@ const StyledBalanceMax = styled.button`
   cursor: pointer;
   margin-right: 0.5rem;
   color: ${({ theme }) => theme.primaryText1};
+  // color: white;
 
   :hover {
     background-color: ${({ theme }) => theme.primary3};
@@ -167,7 +171,7 @@ export default function CurrencyInputPanel({
         {!hideInput && (
           <LabelRow>
             <RowBetween>
-              <TYPE.body color={theme.text2} fontWeight={500} fontSize={14}>
+              <TYPE.body color={theme.text1} fontWeight={500} fontSize={20}>
                 {label}
               </TYPE.body>
               {account && (
